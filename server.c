@@ -15,13 +15,13 @@ void func(int sockfd) {
 	char buff[BUFF_SIZE];
 	int n;
 	for (;;) {
-		bzero(buff, BUFF_SIZE);
+		memset(buff, 0, BUFF_SIZE);
 
 		// 클라이언트의 메세지를 버퍼에 저장 후 프린트
 		read(sockfd, buff, sizeof(buff));
 		printf("From client: %s\t To client : ", buff);
 
-		bzero(buff, BUFF_SIZE);
+		memset(buff, 0, BUFF_SIZE);
 
         // 서버 메세지를 버퍼에 저장 후 전송
 		n = 0;
@@ -52,7 +52,7 @@ int main() {
 	else
 		printf("Socket successfully created..\n");
         
-	bzero(&servaddr, sizeof(servaddr));
+	memset(&servaddr, 0, sizeof(servaddr));
 
 	// IP, 포트 할당
 	servaddr.sin_family = AF_INET;
