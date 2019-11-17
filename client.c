@@ -64,5 +64,5 @@ int main() {
 
 	func(sockfd);
 
-	close(sockfd);
+	shutdown(sockfd, SHUT_WR);
 } 
