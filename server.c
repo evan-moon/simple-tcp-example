@@ -84,5 +84,5 @@ int main() {
 
 	func(connfd);
 
-	shutdown(sockfd, SHUT_WR);
+	close(sockfd);
 } 
