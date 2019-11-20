@@ -49,8 +49,9 @@ int main() {
 		printf("socket creation failed...\n");
 		exit(0);
 	}
-	else
+	else {
 		printf("Socket successfully created..\n");
+	}
         
 	memset(&servaddr, 0, sizeof(servaddr));
 
@@ -63,15 +64,17 @@ int main() {
 		printf("socket bind failed...\n");
 		exit(0);
 	} 
-	else
+	else {
 		printf("Socket successfully binded..\n");
+	}
 
 	if ((listen(sockfd, 5)) != 0) {
 		printf("Listen failed...\n");
 		exit(0);
 	} 
-	else
+	else {
 		printf("Server listening..\n");
+	}
 	len = sizeof(cli);
 
 	connfd = accept(sockfd, (SA*)&cli, &len);
@@ -79,8 +82,9 @@ int main() {
 		printf("server acccept failed...\n");
 		exit(0);
 	}
-	else
+	else {
 		printf("server acccept the client...\n");
+	}
 
 	func(connfd);
 

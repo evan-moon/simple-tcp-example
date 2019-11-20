@@ -44,9 +44,10 @@ int main() {
 		printf("socket creation failed...\n");
 		exit(0);
 	}
-	else
+	else {
 		printf("Socket successfully created..\n");
-
+	}
+		
 	memset(&servaddr, 0, sizeof(servaddr));
 
 	// IP, 포트 할당
@@ -59,8 +60,9 @@ int main() {
 		printf("connection with the server failed...\n");
 		exit(0);
 	}
-	else
+	else {
 		printf("connected to the server..\n");
+	}
 
 	func(sockfd);
 
